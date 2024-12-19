@@ -9,6 +9,7 @@ import { StackNavigator } from "./StackNavigator";
 import { ProfileScreen } from "../screens/profile/ProfileScreen";
 import { globalColors } from "../theme/theme";
 import { useWindowDimensions, View } from "react-native";
+import { BottomTabNavigator } from "./BottomTabNavigator";
 
 const Drawer = createDrawerNavigator();
 export const DrawerNavigator = () => {
@@ -30,18 +31,22 @@ export const DrawerNavigator = () => {
         },
       }}
     >
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="StackNavgation"
         component={StackNavigator}
+      /> */}
+      <Drawer.Screen
+        name="Tabs"
+        component={BottomTabNavigator}
       />
       <Drawer.Screen
         name="Profile"
         component={ProfileScreen}
       />
-      <Drawer.Screen
+      {/* <Drawer.Screen
         name="Setting"
         component={SettingScreen}
-      />
+      /> */}
     </Drawer.Navigator>
   );
 };
